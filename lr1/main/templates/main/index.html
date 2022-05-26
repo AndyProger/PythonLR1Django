@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+    {% block content %}
+    <ul>
+        {% for el in links %}
+            <li><a href="{{ el.linkURL }}"> {{ el.linkURL }} </a></li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
