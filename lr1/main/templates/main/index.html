@@ -8,14 +8,23 @@
     {% block content %}
     <ul>
         {% for el in links %}
+
         <form action="" method="post" id='{{ el.linkURL }}'>
             {% csrf_token %}
+
             <input type="hidden" value="{{ el.linkURL }}" name="name-of-field">
             <li><a target="_blank" href="{{ el.linkURL }}"
                    onclick="document.getElementById('{{ el.linkURL }}').submit();"> {{ el.linkURL }} </a></li>
         </form>
+
         {% endfor %}
     </ul>
     {% endblock %}
+
+    
+<script>
+    window.onload = () => history.back();
+</script>
+
 </body>
 </html>
